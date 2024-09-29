@@ -22,13 +22,40 @@ import "fmt"
 // karangan Leila S. Chudori seharga 108000 sebanyak 1 buah. Buku berikutnya
 // berjudul "Bumi" karangan Tere Liye seharga 97000 sebanyak 1 buah.
 
-type Books struct{}
-type Transaction struct{}
+type Books struct{
+	Title string
+	Writer string
+	Price string
+	Count int
+}
+
+type Transaction struct{
+	Total int
+	Date string
+	Books []Books
+}
+
 
 func main() {
 	// Modifikasi pendefinisian variable tx1 sehingga sesuai dengan kasus
 	// yang diceritakan.
-	tx1 := Transaction{}
-
+	tx1 := Transaction{
+		Total: 32000,
+		Date: "23-01-2021",
+		Books: []Books{
+		{
+			Title: "Laut Bercerita",
+			Writer: "Leila S. Chudori",
+			Price: "108000",
+			Count: 1,
+		},
+		{
+			Title: "Bumi",
+			Writer: "Tere Liye",
+			Price: "97000",
+			Count: 1,
+		},
+		},
+	}
 	fmt.Println(tx1)
 }
